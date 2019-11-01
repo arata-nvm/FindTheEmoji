@@ -1,9 +1,10 @@
 #include "Chara.hpp"
+#include "Emojis.hpp"
 
 Chara::Chara() {}
 
 Chara::Chara(char32 _word, Vec2 _pos, Vec2 _velocity) {
-	this->texture = Texture(Emoji(Format(_word)));
+	this->texture = Emojis::getEmojiTexture(_word);
 	this->pos = _pos;
 	this->velocity = _velocity;
 }

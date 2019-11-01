@@ -371,6 +371,9 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Emojis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Title.hpp">
@@ -392,6 +395,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ranking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Emojis.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

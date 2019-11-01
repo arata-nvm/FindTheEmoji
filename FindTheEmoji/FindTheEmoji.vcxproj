@@ -228,6 +228,7 @@
   <ItemGroup>
     <ClCompile Include="Chara.cpp" />
     <ClCompile Include="Common.hpp" />
+    <ClCompile Include="Emojis.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOver.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -238,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Chara.hpp" />
+    <ClInclude Include="Emojis.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="GameOver.hpp" />
     <ClInclude Include="Random.hpp" />

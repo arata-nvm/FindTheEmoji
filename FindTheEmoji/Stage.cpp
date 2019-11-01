@@ -106,7 +106,8 @@ void Stage::initStageSpecial(int levelToInit, int mode) {
 }
 
 void Stage::shuffleEmoji() {
-	emojis = Range(U'😀', U'👿').asArray().shuffled().take(3);
+	emojis = Range(U'😀', U'🙄').asArray().shuffled().take(3);
+	Logger.writeln(U"New emoji:" + emojis.join());
 }
 
 void Stage::update() {

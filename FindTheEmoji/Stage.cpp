@@ -44,7 +44,7 @@ void Stage::initStageSequence(int levelToInit) {
 	char32 targetEmoji = emojis.choice();
 	Array<char32> otherEmojis = emojis.removed(targetEmoji);
 
-	Vec2 v = Vec2(Random(-1, 1), Random(-1, 1));
+	Vec2 v = Vec2(0, 0);// Random(-1, 1), Random(-1, 1));
 
 	int interval = 10;
 	Vec2 add = Vec2(76, 54);
@@ -67,7 +67,7 @@ void Stage::initStageRandom(int levelToInit) {
 	char32 targetEmoji = emojis.choice();
 	Array<char32> otherEmojis = emojis.removed(targetEmoji);
 
-	Vec2 v = RandomVelocity(Min(levelToInit / 2 + 1, 10));
+	Vec2 v = RandomVelocity(Min(levelToInit / 2 + 1, 3));
 	bool changeVelocity = RandomBool();
 
 	targetChara = Chara(targetEmoji, RandomScreenPos(stageRect), v);

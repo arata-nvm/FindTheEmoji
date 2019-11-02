@@ -40,7 +40,7 @@ void Title::draw() const {
 		chara.draw();
 	}
 
-	const String titleText = U"Find the emoji";
+	const String titleText = U"You're an idiot";
 	const int centerX = Scene::Center().x;
 	const Vec2 center(centerX, 120);
 	FontAsset(U"Title")(titleText).drawAt(center.movedBy(4, 6), ColorF(0.0, 0.5));

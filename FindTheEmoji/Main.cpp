@@ -12,7 +12,7 @@ void Main()
 {
 	System::SetTerminationTriggers(UserAction::CloseButtonClicked);
 
-	Window::SetTitle(U"Find the emoji");
+	Window::SetTitle(U"You're an idiot");
 	Window::SetFullscreen(true);
 
 	Scene::SetBackground(Palette::Deepskyblue);

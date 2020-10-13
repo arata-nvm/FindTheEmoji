@@ -73,6 +73,7 @@
       <LanguageStandard>stdcpplatest</LanguageStandard>
       <MinimalRebuild>false</MinimalRebuild>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -227,7 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chara.cpp" />
-    <ClCompile Include="Common.hpp" />
+    <ClCompile Include="include\Common.hpp" />
     <ClCompile Include="Emojis.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameOver.cpp" />
@@ -238,14 +239,14 @@
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Chara.hpp" />
-    <ClInclude Include="Emojis.hpp" />
-    <ClInclude Include="Game.hpp" />
-    <ClInclude Include="GameOver.hpp" />
-    <ClInclude Include="Random.hpp" />
-    <ClInclude Include="Ranking.h" />
-    <ClInclude Include="Stage.hpp" />
-    <ClInclude Include="Title.hpp" />
+    <ClInclude Include="include\Chara.hpp" />
+    <ClInclude Include="include\Emojis.hpp" />
+    <ClInclude Include="include\Game.hpp" />
+    <ClInclude Include="include\GameOver.hpp" />
+    <ClInclude Include="include\Random.hpp" />
+    <ClInclude Include="include\Ranking.h" />
+    <ClInclude Include="include\Stage.hpp" />
+    <ClInclude Include="include\Title.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

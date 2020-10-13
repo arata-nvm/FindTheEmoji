@@ -1,5 +1,6 @@
 #include "Scenes/Game.hpp"
 #include "Commons/Random.hpp"
+#include "Common.hpp"
 
 Game::Game(const InitData& init) : IScene(init) {
 	getData().spentTime.start();
@@ -19,7 +20,7 @@ void Game::update() {
 	if (isNotStarted(timer)) return;
 
 	if (timer.remaining() <= 0s) {
-		changeScene(State::GameOver, getData().sceneTransisionTime);
+		changeScene(State::GameOver, SceneTrasisionTime);
 		getData().spentTime.pause();
 		getData().ranking.addScore(score);
 		getData().ranking.saveRanking();

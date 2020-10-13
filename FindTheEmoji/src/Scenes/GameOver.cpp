@@ -1,4 +1,5 @@
 #include "Scenes/GameOver.hpp"
+#include "Common.hpp"
 
 GameOver::GameOver(const InitData& init) : IScene(init) {
 
@@ -13,11 +14,11 @@ void GameOver::update() {
 	}
 
 	if (m_retryButton.leftClicked()) {
-		changeScene(State::Game, getData().sceneTransisionTime);
+		changeScene(State::Game, SceneTrasisionTime);
 	}
 
 	if (m_titleButton.leftClicked()) {
-		changeScene(State::Title, getData().sceneTransisionTime);
+		changeScene(State::Title, SceneTrasisionTime);
 	}
 }
 

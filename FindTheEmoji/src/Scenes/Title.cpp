@@ -1,6 +1,7 @@
 ﻿#include "Scenes/Title.hpp"
 #include "GameLogic/Chara.hpp"
 #include "Commons/Random.hpp"
+#include "Common.hpp"
 
 Title::Title(const InitData& init) : IScene(init) {
 	getData().ranking.loadRanking();
@@ -23,7 +24,7 @@ void Title::update() {
 	}
 
 	if (m_startButton.leftClicked()) {
-		changeScene(State::Game, getData().sceneTransisionTime);
+		changeScene(State::Game, SceneTrasisionTime);
 	}
 
 	if (m_exitButton.leftClicked()) {

@@ -16,7 +16,9 @@ private:
 
 	int score = 0;
 
-	Timer timer = Timer(getData().timeOfStage + 2s);
+	Seconds timeOfStage = 10s;
+
+	Timer timer = Timer(timeOfStage + 2s);
 
 	P2World world;
 

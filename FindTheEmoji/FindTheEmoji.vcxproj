@@ -241,6 +241,7 @@
   <ItemGroup>
     <ClInclude Include="include\GameLogic\Chara.hpp" />
     <ClInclude Include="include\Commons\Emojis.hpp" />
+    <ClInclude Include="include\GameLogic\Phase.hpp" />
     <ClInclude Include="include\Scenes\Game.hpp" />
     <ClInclude Include="include\Scenes\GameOver.hpp" />
     <ClInclude Include="include\Commons\Random.hpp" />

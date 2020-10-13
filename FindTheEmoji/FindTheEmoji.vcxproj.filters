@@ -400,5 +400,8 @@
     <ClInclude Include="include\Commons\Ranking.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="include\GameLogic\Phase.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

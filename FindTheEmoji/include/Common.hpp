@@ -9,15 +9,14 @@ enum class State {
 };
 
 struct GameData {
-	Seconds timeOfStage = 10s;
-
-	Stopwatch spentTime = Stopwatch(0s);
-
-	int32 sceneTransisionTime = 200;
-	
 	Ranking ranking = Ranking(U"score.txt");
 
 	int32 lastScore = 0;
+
+
+	Stopwatch spentTime = Stopwatch(0s);
 };
 
 using MyApp = SceneManager<State, GameData>;
+
+const int32 SceneTrasisionTime = 200;

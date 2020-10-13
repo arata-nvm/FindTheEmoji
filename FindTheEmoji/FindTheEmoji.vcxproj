@@ -244,7 +244,7 @@
     <ClInclude Include="include\Game.hpp" />
     <ClInclude Include="include\GameOver.hpp" />
     <ClInclude Include="include\Random.hpp" />
-    <ClInclude Include="include\Ranking.h" />
+    <ClInclude Include="include\Ranking.hpp" />
     <ClInclude Include="include\Stage.hpp" />
     <ClInclude Include="include\Title.hpp" />
   </ItemGroup>

@@ -391,13 +391,13 @@
     <ClInclude Include="include\Random.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\Ranking.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\Stage.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\Title.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Ranking.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -3,7 +3,7 @@
 #include "Title.hpp"
 #include "Game.hpp"
 #include "GameOver.hpp"
-#include "Ranking.h"
+#include "Ranking.hpp"
 #include <iostream>
 
 using namespace std;

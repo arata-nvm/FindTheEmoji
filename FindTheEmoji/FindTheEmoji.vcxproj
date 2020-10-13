@@ -230,23 +230,23 @@
     <ClCompile Include="Chara.cpp" />
     <ClCompile Include="include\Common.hpp" />
     <ClCompile Include="Emojis.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="GameOver.cpp" />
+    <ClCompile Include="Scenes\Game.cpp" />
+    <ClCompile Include="Scenes\GameOver.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Random.cpp" />
     <ClCompile Include="Ranking.cpp" />
     <ClCompile Include="Stage.cpp" />
-    <ClCompile Include="Title.cpp" />
+    <ClCompile Include="Scenes\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Chara.hpp" />
     <ClInclude Include="include\Emojis.hpp" />
-    <ClInclude Include="include\Game.hpp" />
-    <ClInclude Include="include\GameOver.hpp" />
+    <ClInclude Include="include\Scenes\Game.hpp" />
+    <ClInclude Include="include\Scenes\GameOver.hpp" />
     <ClInclude Include="include\Random.hpp" />
     <ClInclude Include="include\Ranking.hpp" />
     <ClInclude Include="include\Stage.hpp" />
-    <ClInclude Include="include\Title.hpp" />
+    <ClInclude Include="include\Scenes\Title.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

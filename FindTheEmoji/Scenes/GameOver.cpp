@@ -1,4 +1,4 @@
-#include "GameOver.hpp"
+#include "Scenes/GameOver.hpp"
 
 GameOver::GameOver(const InitData& init) : IScene(init) {
 

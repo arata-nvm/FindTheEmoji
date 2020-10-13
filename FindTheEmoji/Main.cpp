@@ -1,8 +1,8 @@
 ﻿#include <Siv3D.hpp>
 #include "Common.hpp"
-#include "Title.hpp"
-#include "Game.hpp"
-#include "GameOver.hpp"
+#include "Scenes/Title.hpp"
+#include "Scenes/Game.hpp"
+#include "Scenes/GameOver.hpp"
 #include "Ranking.hpp"
 #include <iostream>
 

@@ -2,8 +2,8 @@
 #include <Siv3D.hpp>
 #include <HamFramework.hpp>
 #include "Common.hpp"
-#include "Chara.hpp"
-#include "Stage.hpp"
+#include "GameLogic/Chara.hpp"
+#include "GameLogic/Stage.hpp"
 
 class Game: public MyApp::Scene
 {

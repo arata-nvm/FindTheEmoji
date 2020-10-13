@@ -1,4 +1,4 @@
-#include "Ranking.hpp"
+#include "Commons/Ranking.hpp"
 
 Ranking::Ranking(String _fileName) {
 	fileName = _fileName;

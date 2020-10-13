@@ -1,6 +1,6 @@
 ﻿#include "Scenes/Title.hpp"
-#include "Chara.hpp"
-#include "Random.hpp"
+#include "GameLogic/Chara.hpp"
+#include "Commons/Random.hpp"
 
 Title::Title(const InitData& init) : IScene(init) {
 	getData().ranking.loadRanking();

@@ -1,5 +1,5 @@
 #include "Scenes/Game.hpp"
-#include "Random.hpp"
+#include "Commons/Random.hpp"
 
 Game::Game(const InitData& init) : IScene(init) {
 	getData().spentTime.start();

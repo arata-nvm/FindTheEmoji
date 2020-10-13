@@ -227,25 +227,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Chara.cpp" />
+    <ClCompile Include="src\GameLogic\Chara.cpp" />
     <ClCompile Include="include\Common.hpp" />
-    <ClCompile Include="src\Emojis.cpp" />
+    <ClCompile Include="src\Commons\Emojis.cpp" />
     <ClCompile Include="src\Scenes\Game.cpp" />
     <ClCompile Include="src\Scenes\GameOver.cpp" />
     <ClCompile Include="src\Main.cpp" />
-    <ClCompile Include="src\Random.cpp" />
-    <ClCompile Include="src\Ranking.cpp" />
-    <ClCompile Include="src\Stage.cpp" />
+    <ClCompile Include="src\Commons\Random.cpp" />
+    <ClCompile Include="src\Commons\Ranking.cpp" />
+    <ClCompile Include="src\GameLogic\Stage.cpp" />
     <ClCompile Include="src\Scenes\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Chara.hpp" />
-    <ClInclude Include="include\Emojis.hpp" />
+    <ClInclude Include="include\GameLogic\Chara.hpp" />
+    <ClInclude Include="include\Commons\Emojis.hpp" />
     <ClInclude Include="include\Scenes\Game.hpp" />
     <ClInclude Include="include\Scenes\GameOver.hpp" />
-    <ClInclude Include="include\Random.hpp" />
-    <ClInclude Include="include\Ranking.hpp" />
-    <ClInclude Include="include\Stage.hpp" />
+    <ClInclude Include="include\Commons\Random.hpp" />
+    <ClInclude Include="include\Commons\Ranking.hpp" />
+    <ClInclude Include="include\GameLogic\Stage.hpp" />
     <ClInclude Include="include\Scenes\Title.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

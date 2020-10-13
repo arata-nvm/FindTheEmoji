@@ -1,4 +1,4 @@
-#include "Emojis.hpp"
+#include "Commons/Emojis.hpp"
 
 Texture Emojis::getEmojiTexture(char32 emoji) {
 	std::map<char32, Texture>::iterator it = textures.find(emoji);

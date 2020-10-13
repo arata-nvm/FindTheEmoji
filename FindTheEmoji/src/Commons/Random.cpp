@@ -1,5 +1,5 @@
 #include <Siv3D.hpp>
-#include "Random.hpp"
+#include "Commons/Random.hpp"
 
 Vec2 RandomScreenPos(const Rect& stageRect) {
 	return Vec2(

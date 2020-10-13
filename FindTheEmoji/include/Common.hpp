@@ -1,6 +1,6 @@
 #pragma once
 #include <Siv3D.hpp>
-#include "Ranking.hpp"
+#include "Commons/Ranking.hpp"
 
 enum class State {
 	Title,

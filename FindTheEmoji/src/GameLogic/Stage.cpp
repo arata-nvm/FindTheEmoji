@@ -1,5 +1,5 @@
-﻿#include "Stage.hpp"
-#include "Random.hpp"
+﻿#include "GameLogic/Stage.hpp"
+#include "Commons/Random.hpp"
 
 bool isNear(Point p1, Point p2, int e = 50) {
 	return abs(p1.x - p2.x) < e && abs(p1.y - p2.y) < e;

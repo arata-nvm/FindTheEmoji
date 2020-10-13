@@ -3,7 +3,7 @@
 #include "Scenes/Title.hpp"
 #include "Scenes/Game.hpp"
 #include "Scenes/GameOver.hpp"
-#include "Ranking.hpp"
+#include "Commons/Ranking.hpp"
 #include <iostream>
 
 using namespace std;

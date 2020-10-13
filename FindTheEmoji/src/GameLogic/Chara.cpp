@@ -1,5 +1,5 @@
-#include "Chara.hpp"
-#include "Emojis.hpp"
+#include "GameLogic/Chara.hpp"
+#include "Commons/Emojis.hpp"
 
 Chara::Chara() {}
 

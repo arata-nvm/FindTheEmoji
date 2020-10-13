@@ -1,6 +1,6 @@
 #pragma once
 #include "Common.hpp"
-#include "Chara.hpp"
+#include "GameLogic/Chara.hpp"
 
 class Title : public MyApp::Scene {
 private:

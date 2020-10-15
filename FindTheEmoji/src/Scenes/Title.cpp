@@ -46,7 +46,6 @@ void Title::draw() const {
 	const int centerX = Scene::Center().x;
 
 	// タイトル
-	const String TitleName = U"You're an idiot";
 	const Vec2 center(centerX, 120);
 	FontAsset(U"Title")(TitleName).drawAt(center.movedBy(4, 6), ColorF(0.0, 0.5));
 	FontAsset(U"Title")(TitleName).drawAt(center);

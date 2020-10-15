@@ -12,7 +12,7 @@ void Main()
 {
 	System::SetTerminationTriggers(UserAction::CloseButtonClicked);
 
-	Window::SetTitle(U"You're an idiot");
+	Window::SetTitle(TitleName);
 	Window::SetFullscreen(true);
 
 	Scene::SetBackground(Palette::Deepskyblue);

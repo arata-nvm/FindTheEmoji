@@ -19,4 +19,5 @@ struct GameData {
 
 using MyApp = SceneManager<State, GameData>;
 
+const String TitleName = U"You're an idiot";
 const int32 SceneTrasisionTime = 200;

@@ -13,8 +13,6 @@ private:
 
 	Stage stage = Stage(stageRect);
 
-	int level = 1;
-
 	int score = 0;
 
 	Seconds timeOfStage = 10s;

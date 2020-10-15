@@ -4,7 +4,7 @@
 
 Game::Game(const InitData& init) : IScene(init) {
 	getData().spentTime.start();
-	stage.initStage(level);
+	stage.nextStage();
 	timer.start();
 }
 
@@ -33,7 +33,7 @@ void Game::update() {
 
 	if (!isFinished(timer) && stage.isCleared()) {
 		score += timer.s();
-		stage.initStage(++level);
+		stage.nextStage();
 		timer.restart();
 	}
 
@@ -61,7 +61,7 @@ void Game::drawUI() const {
 	stage.getTargetChara().texture.drawAt(Scene::Width() - 100, 100);
 
 	FontAsset(U"Score")(U"Time: {}"_fmt(timer.s())).drawAt(Scene::Width() - 100, 200);
-	FontAsset(U"Score")(U"Level: {}"_fmt(level)).drawAt(Scene::Width() - 100, 250);
+	FontAsset(U"Score")(U"Level: {}"_fmt(stage.getCurrentLevel())).drawAt(Scene::Width() - 100, 250);
 	FontAsset(U"Score")(U"Score:").drawAt(Scene::Width() - 100, 300);
 	FontAsset(U"Score")(U"{}"_fmt(score)).drawAt(Scene::Width() - 90, 350);
 

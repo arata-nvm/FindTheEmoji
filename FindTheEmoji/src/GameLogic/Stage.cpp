@@ -23,26 +23,27 @@ void Stage::clear() {
 	otherCharas.clear();
 }
 
-void Stage::initStage(int levelToInit) {
+void Stage::nextStage() {
+	++level;
 	this->clear();
-	if (levelToInit % 10 == 0) {
+	if (level % 10 == 0) {
 		emojis = Emojis::RandomEmojis(3);
 		Logger.writeln(U"New emoji: {}"_fmt(emojis.join()));
 	}
 
-	if (levelToInit >= 10 && RandomBool(0.15)) {
-		initStageSpecial(levelToInit);
+	if (level >= 10 && RandomBool(0.15)) {
+		initStageSpecial(level);
 		return;
 	}
 
-	if (levelToInit <= 5 || RandomBool(0.7)) {
-		initStageRandom(levelToInit);
+	if (level <= 5 || RandomBool(0.7)) {
+		initStageRandom();
 	} else  {
-		initStageSequence(levelToInit - 10);
+		initStageSequence();
 	}
 }
 
-void Stage::initStageSequence(int levelToInit) {
+void Stage::initStageSequence() {
 	char32 targetEmoji = emojis.choice();
 	Array<char32> otherEmojis = emojis.removed(targetEmoji);
 
@@ -65,16 +66,16 @@ void Stage::initStageSequence(int levelToInit) {
 	}
 }
 
-void Stage::initStageRandom(int levelToInit) {
+void Stage::initStageRandom() {
 	char32 targetEmoji = emojis.choice();
 	Array<char32> otherEmojis = emojis.removed(targetEmoji);
 
-	Vec2 v = RandomVec::RandomVelocity(Min(levelToInit / 2 + 1, 3));
+	Vec2 v = RandomVec::RandomVelocity(Min(level / 2 + 1, 3));
 	bool changeVelocity = RandomBool();
 
 	targetChara = Chara(targetEmoji, RandomVec::RandomScreenPos(stageRect), v);
 
-	for (auto i : step(Min(levelToInit * 3, 50))) {
+	for (auto i : step(Min(level * 3, 50))) {
 		if (changeVelocity) {
 			v = RandomVec::RandomVelocity(3);
 		}
@@ -82,7 +83,7 @@ void Stage::initStageRandom(int levelToInit) {
 	}
 }
 
-void Stage::initStageSpecial(int levelToInit, int mode) {
+void Stage::initStageSpecial(int mode) {
 	if (mode < 0 || mode > 2) mode = Random(0, 2);
 
 	char32 emoji = emojis.choice();
@@ -127,4 +128,8 @@ Chara Stage::getTargetChara() const {
 
 Array<Chara> Stage::getOtherCharas() const {
 	return otherCharas;
+}
+
+int Stage::getCurrentLevel() const {
+	return level;
 }

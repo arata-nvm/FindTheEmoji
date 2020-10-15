@@ -15,19 +15,21 @@ private:
 
 	Array<Chara> otherCharas;
 
+	int level = 0;
+
 
 public:
 	Stage(Rect&);
 
 	void clear();
 
-	void initStage(int);
+	void nextStage();
 
-	void initStageSequence(int);
+	void initStageSequence();
 
-	void initStageRandom(int);
+	void initStageRandom();
 
-	void initStageSpecial(int, int = -1);
+	void initStageSpecial(int = -1);
 
 	void update();
 
@@ -36,5 +38,7 @@ public:
 	Chara getTargetChara() const;
 
 	Array<Chara> getOtherCharas() const;
+
+	int getCurrentLevel() const;
 };
 

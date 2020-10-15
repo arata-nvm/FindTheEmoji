@@ -28,9 +28,6 @@ void Main()
 		.add<GameOver>(State::GameOver)
 		.setFadeColor(Palette::White);
 
-	// これがないと無駄にした時間が正常な値にならない？
-	Stopwatch sw(true);
-
 	while (System::Update())
 	{
 		if (!sceneManager.update()) {

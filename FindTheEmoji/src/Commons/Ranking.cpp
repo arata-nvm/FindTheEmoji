@@ -10,24 +10,23 @@ int Ranking::addScore(int score) {
 	return getRank(score);
 }
 
-int Ranking::getRank(int score) {
-	if (!ranks.includes(score)) this->addScore(score);
-	int rank;
+int Ranking::getRank(int score) const {
+	int rank = -1;
 	ranks.each_index([&](int i, int v) {
 		if (v == score) rank = i;
 	});
 	return rank + 1;
 }
 
-int Ranking::getHighScore() {
+int Ranking::getHighScore() const {
 	return ranks[0];
 }
 
-int Ranking::size() {
+int Ranking::scoresCount() const {
 	return ranks.size();
 }
 
-void Ranking::saveRanking() {
+void Ranking::saveRanking() const {
 	TextWriter writer(fileName, OpenMode::Trunc, TextEncoding::UTF8);
 	for (const auto& rank : ranks) {
 		writer.writeln(rank);

@@ -28,9 +28,11 @@ void GameOver::draw() const {
 	FontAsset(U"Title")(titleText).drawAt(center.movedBy(4, 6), ColorF(0.0, 0.5));
 	FontAsset(U"Title")(titleText).drawAt(center);
 
-	const int32 lastScore = getData().lastScore;
-	const String score = U"Score: {} ({}/{}ˆÊ)"_fmt(lastScore, getData().ranking.getRank(lastScore), getData().ranking.size());
-	FontAsset(U"Score")(score).drawAt(center.movedBy(0, 200));
+	const int32 score = getData().lastScore;
+	const int32 rank = getData().ranking.getRank(score);
+	const int32 scoresCount = getData().ranking.scoresCount();
+	const String scoreText = U"Score: {} ({}/{}ˆÊ)"_fmt(score, rank, scoresCount);
+	FontAsset(U"Score")(scoreText).drawAt(center.movedBy(0, 200));
 
 	const int32 highScore = getData().ranking.getHighScore();
 	FontAsset(U"Score")(U"High score: {}"_fmt(highScore)).drawAt(center.movedBy(0, 250));

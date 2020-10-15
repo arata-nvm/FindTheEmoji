@@ -13,13 +13,13 @@ public:
 
 	int addScore(int score);
 
-	int getRank(int score);
+	int getRank(int score) const;
 
-	int getHighScore();
+	int getHighScore() const;
 
-	int size();
+	int scoresCount() const;
 
-	void saveRanking();
+	void saveRanking() const;
 
 	void loadRanking();
 

@@ -1,5 +1,6 @@
 ﻿#include "GameLogic/Stage.hpp"
 #include "Commons/Random.hpp"
+#include "Commons/Emojis.hpp"
 
 bool isNear(Point p1, Point p2, int e = 50) {
 	return abs(p1.x - p2.x) < e && abs(p1.y - p2.y) < e;
@@ -25,7 +26,8 @@ void Stage::clear() {
 void Stage::initStage(int levelToInit) {
 	this->clear();
 	if (levelToInit % 10 == 0) {
-		shuffleEmoji();
+		emojis = Emojis::RandomEmojis(3);
+		Logger.writeln(U"New emoji: {}"_fmt(emojis.join()));
 	}
 
 	if (levelToInit >= 10 && RandomBool(0.15)) {
@@ -103,11 +105,6 @@ void Stage::initStageSpecial(int levelToInit, int mode) {
 		break;
 	}
 
-}
-
-void Stage::shuffleEmoji() {
-	emojis = Range(U'😀', U'🙄').asArray().shuffled().take(3);
-	Logger.writeln(U"New emoji:" + emojis.join());
 }
 
 void Stage::update() {

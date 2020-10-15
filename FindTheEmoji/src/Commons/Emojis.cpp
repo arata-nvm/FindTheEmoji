@@ -1,7 +1,7 @@
-#include "Commons/Emojis.hpp"
+﻿#include "Commons/Emojis.hpp"
 
-Texture Emojis::getEmojiTexture(char32 emoji) {
-	std::map<char32, Texture>::iterator it = textures.find(emoji);
+Texture Emojis::GetEmojiTexture(char32 emoji) {
+	auto it = textures.find(emoji);
 	if (it != textures.end()) {
 		return it->second;
 	}
@@ -9,4 +9,8 @@ Texture Emojis::getEmojiTexture(char32 emoji) {
 	textures.emplace(emoji, tex);
 	Logger.writeln(U"Created texture: " + Format(emoji));
 	return tex;
+}
+
+Array<char32> Emojis::RandomEmojis(int num) {
+	return Range(U'😀', U'🙄').asArray().shuffled().take(num);
 }

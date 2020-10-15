@@ -4,7 +4,7 @@
 Chara::Chara() {}
 
 Chara::Chara(char32 _word, Vec2 _pos, Vec2 _velocity) {
-	this->texture = Emojis::getEmojiTexture(_word);
+	this->texture = Emojis::GetEmojiTexture(_word);
 	this->pos = _pos;
 	this->velocity = _velocity;
 }

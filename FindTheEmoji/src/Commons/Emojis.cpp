@@ -1,6 +1,6 @@
 ﻿#include "Commons/Emojis.hpp"
 
-Texture Emojis::GetEmojiTexture(char32 emoji) {
+Texture Emojis::GetEmojiTexture(const char32 emoji) {
 	auto it = textures.find(emoji);
 	if (it != textures.end()) {
 		return it->second;
@@ -11,6 +11,6 @@ Texture Emojis::GetEmojiTexture(char32 emoji) {
 	return tex;
 }
 
-Array<char32> Emojis::RandomEmojis(int num) {
+Array<char32> Emojis::RandomEmojis(const int num) {
 	return Range(U'😀', U'🙄').asArray().shuffled().take(num);
 }

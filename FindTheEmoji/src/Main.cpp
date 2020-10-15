@@ -28,8 +28,7 @@ void Main()
 		.add<GameOver>(State::GameOver)
 		.setFadeColor(Palette::White);
 
-	while (System::Update())
-	{
+	while (System::Update()) {
 		if (!sceneManager.update()) {
 			break;
 		}

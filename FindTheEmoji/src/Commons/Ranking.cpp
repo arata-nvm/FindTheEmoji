@@ -1,16 +1,16 @@
 #include "Commons/Ranking.hpp"
 
-Ranking::Ranking(String _fileName) {
+Ranking::Ranking(const String _fileName) {
 	fileName = _fileName;
 }
 
-int Ranking::addScore(int score) {
+int Ranking::addScore(const int score) {
 	ranks.emplace_back(score);
 	ranks.sort().reverse();
 	return getRank(score);
 }
 
-int Ranking::getRank(int score) const {
+int Ranking::getRank(const int score) const {
 	int rank = -1;
 	ranks.each_index([&](int i, int v) {
 		if (v == score) rank = i;

@@ -9,18 +9,12 @@ Chara::Chara(char32 _word, Vec2 _pos, Vec2 _velocity) {
 	this->velocity = _velocity;
 }
 
-Chara::Chara(Texture _texture, Vec2 _pos, Vec2 _velocity) {
-	this->texture = _texture;
-	this->pos = _pos;
-	this->velocity = _velocity;
-}
-
 void Chara::update(const Rect& stage) {
 	pos += velocity;
-	Loop(&pos, stage);
+	loop(&pos, stage);
 }
 
-void Chara::Loop(Vec2* vec, const Rect& stageRect) {
+void Chara::loop(Vec2* vec, const Rect& stageRect) {
 	int tw = texture.width() / 2;
 	int th = texture.height() / 2;
 	if (vec->x + tw < stageRect.x) vec->x = stageRect.w + tw;

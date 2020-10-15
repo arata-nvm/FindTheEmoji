@@ -9,11 +9,11 @@ private:
 	String fileName;
 
 public:
-	Ranking(String _fileName);
+	Ranking(const String _fileName);
 
-	int addScore(int score);
+	int addScore(const int score);
 
-	int getRank(int score) const;
+	int getRank(const int score) const;
 
 	int getHighScore() const;
 
@@ -22,7 +22,5 @@ public:
 	void saveRanking() const;
 
 	void loadRanking();
-
-
 };
 

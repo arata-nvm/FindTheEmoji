@@ -6,7 +6,7 @@ static std::map<char32, Texture> textures;
 
 class Emojis {
 public:
-	static Texture GetEmojiTexture(char32 emoji);
+	static Texture GetEmojiTexture(const char32 emoji);
 
-	static Array<char32> RandomEmojis(int);
+	static Array<char32> RandomEmojis(const int num);
 };

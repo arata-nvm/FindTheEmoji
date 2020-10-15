@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <Siv3D.hpp>
 #include "Chara.hpp"
+#include "GameLogic/Phase.hpp"
 
 class Stage
 {
@@ -9,14 +10,13 @@ private:
 
 	Rect stageRect;
 
-	RenderTexture rt;
-
 	Chara targetChara;
-
 	Array<Chara> otherCharas;
 
-	int level = 0;
+	Seconds timeOfStage = 10s;
+	Timer timer = Timer(timeOfStage + 2s);
 
+	int level = 0;
 
 public:
 	Stage(Rect&);
@@ -38,6 +38,10 @@ public:
 	Chara getTargetChara() const;
 
 	Array<Chara> getOtherCharas() const;
+
+	Phase getCurrentPhase() const;
+
+	int32 getRemainingTime() const;
 
 	int getCurrentLevel() const;
 };

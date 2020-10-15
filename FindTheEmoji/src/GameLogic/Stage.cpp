@@ -2,20 +2,8 @@
 #include "Commons/Random.hpp"
 #include "Commons/Emojis.hpp"
 
-bool isNear(Point p1, Point p2, int e = 50) {
-	return abs(p1.x - p2.x) < e && abs(p1.y - p2.y) < e;
-}
-
-Vec2 LerpVec(Rect& stageRect, float fx, float fy) {
-	return Vec2(
-		stageRect.x + stageRect.w * fx,
-		stageRect.y + stageRect.h * fy
-	);
-}
-
 Stage::Stage(Rect& stageRect) {
 	this->stageRect = stageRect;
-	this->rt = RenderTexture(stageRect.size, Palette::Black);
 }
 
 void Stage::clear() {
@@ -23,9 +11,19 @@ void Stage::clear() {
 	otherCharas.clear();
 }
 
+void Stage::update() {
+	targetChara.update(stageRect);
+
+	for (auto& chara : otherCharas) {
+		chara.update(stageRect);
+	}
+}
+
 void Stage::nextStage() {
 	++level;
 	this->clear();
+	timer.restart();
+
 	if (level % 10 == 0) {
 		emojis = Emojis::RandomEmojis(3);
 		Logger.writeln(U"New emoji: {}"_fmt(emojis.join()));
@@ -43,11 +41,18 @@ void Stage::nextStage() {
 	}
 }
 
+Vec2 LerpVec(Rect& stageRect, float fx, float fy) {
+	return Vec2(
+		stageRect.x + stageRect.w * fx,
+		stageRect.y + stageRect.h * fy
+	);
+}
+
 void Stage::initStageSequence() {
 	char32 targetEmoji = emojis.choice();
 	Array<char32> otherEmojis = emojis.removed(targetEmoji);
 
-	Vec2 v = Vec2(0, 0);// Random(-1, 1), Random(-1, 1));
+	Vec2 v = Vec2(0, 0);
 
 	int interval = 10;
 	Vec2 add = Vec2(76, 54);
@@ -108,18 +113,12 @@ void Stage::initStageSpecial(int mode) {
 
 }
 
-void Stage::update() {
-	targetChara.update(stageRect);
-
-	for (auto& chara : otherCharas) {
-		chara.update(stageRect);
-	}
-
-	rt.clear(Palette::Black);
+bool IsNear(Point p1, Point p2, int e = 50) {
+	return abs(p1.x - p2.x) < e && abs(p1.y - p2.y) < e;
 }
 
 bool Stage::isCleared() {
-	return MouseL.down() && isNear(Cursor::Pos(), targetChara.pos.asPoint());
+	return MouseL.down() && IsNear(Cursor::Pos(), targetChara.pos.asPoint());
 }
 
 Chara Stage::getTargetChara() const {
@@ -128,6 +127,25 @@ Chara Stage::getTargetChara() const {
 
 Array<Chara> Stage::getOtherCharas() const {
 	return otherCharas;
+}
+
+Phase Stage::getCurrentPhase() const {
+	if (timer.remaining() == 0s) {
+		return Phase::Finished;
+	}
+	else if (timer.remaining() < 1s) {
+		return Phase::TimeOver;
+	}
+	else if (timer.remaining() <= timeOfStage + 1s) {
+		return Phase::Started;
+	}
+	else {
+		return Phase::Ready;
+	}
+}
+
+int32 Stage::getRemainingTime() const {
+	return timer.s();
 }
 
 int Stage::getCurrentLevel() const {

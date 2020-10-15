@@ -15,11 +15,6 @@ private:
 
 	int score = 0;
 
-	Seconds timeOfStage = 10s;
-
-	Timer timer = Timer(timeOfStage + 2s);
-
-	P2World world;
 
 	void drawUI() const;
 

@@ -8,11 +8,11 @@ Title::Title(const InitData& init) : IScene(init) {
 
 	// 背景の絵文字キャラを初期化する
 	const Array<char32> emojis = Range(U'😀', U'😛').asArray();
-	const Vec2 baseVelocity = RandomVelocity(3);
+	const Vec2 baseVelocity = RandomVec::RandomVelocity(3);
 	for (auto _ : step(10)) {
 		charas.push_back(Chara(
 			emojis.choice(),
-			RandomScreenPos(screenRect),
+			RandomVec::RandomScreenPos(screenRect),
 			baseVelocity * Random(0.5, 1.5)
 		));
 	}

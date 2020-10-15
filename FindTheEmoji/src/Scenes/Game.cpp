@@ -41,16 +41,11 @@ void Game::update() {
 }
 
 void Game::draw() const {
-	stage.getTargetChara().texture.drawAt(Scene::Width() - 100, 100);
-	FontAsset(U"Score")(U"Time: {}"_fmt(timer.s())).drawAt(Scene::Width() - 100, 200);
-	FontAsset(U"Score")(U"Level: {}"_fmt(level)).drawAt(Scene::Width() - 100, 250);
-	FontAsset(U"Score")(U"Score:").drawAt(Scene::Width() - 100, 300);
-	FontAsset(U"Score")(U"{}"_fmt(score)).drawAt(Scene::Width() - 90, 350);
-
-	stage.drawStage();
+	drawUI();
 
 	if (isNotStarted(timer)) {
-		stage.drawTargetAtCenter();
+		FontAsset(U"Title")(U"’T‚¹!!!").drawAt(Scene::Center().movedBy(0, -150));
+		stage.getTargetChara().texture.drawAt(Scene::Center());
 		return;
 	}
 
@@ -59,6 +54,29 @@ void Game::draw() const {
 		return;
 	}
 
-	stage.draw();
+	drawStage();
+}
 
+void Game::drawUI() const {
+	stage.getTargetChara().texture.drawAt(Scene::Width() - 100, 100);
+
+	FontAsset(U"Score")(U"Time: {}"_fmt(timer.s())).drawAt(Scene::Width() - 100, 200);
+	FontAsset(U"Score")(U"Level: {}"_fmt(level)).drawAt(Scene::Width() - 100, 250);
+	FontAsset(U"Score")(U"Score:").drawAt(Scene::Width() - 100, 300);
+	FontAsset(U"Score")(U"{}"_fmt(score)).drawAt(Scene::Width() - 90, 350);
+
+	stageRect.drawFrame(0.5);
+	stageRect.draw(Palette::Black);
+}
+
+void Game::drawStage() const {
+	rt.clear(Palette::Black);
+	{
+		ScopedRenderTarget2D target(rt);
+		stage.getTargetChara().draw();
+		for (const auto& chara : stage.getOtherCharas()) {
+			chara.draw();
+		}
+	}
+	rt.drawAt(stageRect.center());
 }

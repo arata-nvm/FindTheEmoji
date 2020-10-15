@@ -29,18 +29,12 @@ public:
 
 	void initStageSpecial(int, int = -1);
 
-	void shuffleEmoji();
-
 	void update();
-
-	void draw() const;
-
-	void drawStage() const;
-
-	void drawTargetAtCenter() const;
 
 	bool isCleared();
 
 	Chara getTargetChara() const;
+
+	Array<Chara> getOtherCharas() const;
 };
 

@@ -117,32 +117,14 @@ void Stage::update() {
 	rt.clear(Palette::Black);
 }
 
-void Stage::draw() const {
-	{
-		ScopedRenderTarget2D target(rt);
-
-		targetChara.draw();
-		for (const auto& chara : otherCharas) {
-			chara.draw();
-		}
-	}
-	drawStage();
-}
-
-void Stage::drawStage() const {
-	rt.drawAt(stageRect.center());
-	stageRect.drawFrame(5.0);
-}
-
-void Stage::drawTargetAtCenter() const {
-	FontAsset(U"Title")(U"探せ!!!").drawAt(Scene::Center().movedBy(0, -150));
-	targetChara.texture.drawAt(Scene::Center());
-}
-
 bool Stage::isCleared() {
 	return MouseL.down() && isNear(Cursor::Pos(), targetChara.pos.asPoint());
 }
 
 Chara Stage::getTargetChara() const {
 	return targetChara;
+}
+
+Array<Chara> Stage::getOtherCharas() const {
+	return otherCharas;
 }

@@ -9,6 +9,7 @@ class Game: public MyApp::Scene
 {
 private:
 	Rect stageRect = Rect(0, 0, Scene::Width() - 200, Scene::Height()).stretched(-5);
+	RenderTexture rt = RenderTexture(stageRect.size, Palette::Black);
 
 	Stage stage = Stage(stageRect);
 
@@ -22,6 +23,9 @@ private:
 
 	P2World world;
 
+	void drawUI() const;
+
+	void drawStage() const;
 
 public:
 	Game(const InitData& init);

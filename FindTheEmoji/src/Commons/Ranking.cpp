@@ -19,6 +19,7 @@ int Ranking::getRank(const int score) const {
 }
 
 int Ranking::getHighScore() const {
+	if (ranks.isEmpty()) return 0;
 	return ranks[0];
 }
 
